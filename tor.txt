@@ -1,0 +1,5 @@
+create two files: index.js and index.html
+index.js contains everything required for server
+index.html contains everything required for client 
+page presents an input, a button and a list of strings added
+server provides html and endpoints: add record, get records
