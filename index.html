@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    onload = () => {
+      fetch('/').then(response => response.json()).then(records => {
+        list.innerHTML = records
+          .map(record => `<li>${record}</li>`).join('')
+      })
+      btn.onclick = () => {
+        fetch('/', { method: 'POST', body: input.value })
+          .then(() => location.reload())
+      }
+    }   
+  </script>
+</head>
+
+<body>
+  <input type="text" id="input">
+  <button id="btn">add</button>
+  <ul id="list"></ul>
+
+</body>
+
+</html>
